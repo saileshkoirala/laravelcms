@@ -288,12 +288,13 @@
         <li class="item1"><a href="#">{{ $value->catname }}<img class="arrow-img" src="images/arrow1.png" alt=""/> </a>
             
                 <ul class="cute">
-
+                   
                 @foreach($pro as $value1) 
-                     @if($value1->catname == $value->catname)  
+                      @if($value->catname == $value1->catname)  
                         <li class="subitem1"><a href="#">{{ $value1->productname }}</a></li>
-                      @endif  
+                      @endif
                 @endforeach
+
                 </ul>
               
         </li>

@@ -63,7 +63,7 @@
             
         </div>
         <div class="table-responsive">
-        		     
+                           
                           <form method="POST" id="h1" action="/insertprod" class="form-group">
                             {{ csrf_field() }}
                             

@@ -58,6 +58,14 @@
                         </li>  
                  
                 </div>
+                <div class="panel-heading"><span class="glyphicon glyphicon-picture">Appereance</span></div>
+                <div class="panel-body">
+                    <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Change Logo<span class="caret"></span>
+                            </a>
+                    </li>
+                </div>
                       
             </div>
             

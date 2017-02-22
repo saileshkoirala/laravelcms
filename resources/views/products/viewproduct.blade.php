@@ -72,7 +72,7 @@
                             @foreach($pro as $value)
                                 <tr width="80%">
                                     
-                                    <td width="60%"><img src="{{ $value->image }}"  height="42" width="42"></td>  
+                                    <td width="60%"><img src="{{ $value->image }}"  height="100" width="100"></td>  
                                     <td>
                                     <a href="edit/{{ $value->id }}" class="btn btn-primary ">Edit</a>&nbsp;
                                     <a href="delete/{{ $value->ID }}" class="btn btn-danger">Delete</a>

@@ -37,8 +37,7 @@ class Procontroller extends Controller
         $proname->description = Input::get('prodesc');
         $proname->price = Input::get('proprice');
         $proname->image = Input::get('proimage');
-       
- 		$proname->save();
+        $proname->save();
  		return back();
 
 	}
