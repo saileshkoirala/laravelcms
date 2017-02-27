@@ -38,9 +38,17 @@ Route::get('/viewproduct','Procontroller@viewproduct');
 
 Route::post('/insertprod','Procontroller@insertprod');
 
+Route::get('/logo','Logocontroller@changelogo');
+
 /* ********** Front end (ecommerce site)************* */
 
 Route::get('/','Frontcontroller@front');
+
+Route::get('/product','Frontcontroller@product');
+
+Route::get('/product','Frontcontroller@front');
+
+
 
 
 

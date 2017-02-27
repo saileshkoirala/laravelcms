@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="nav-side-menu">
-   
+
+    <div class="brand">Menu</div>
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
   
         <div class="menu-list">
@@ -24,7 +24,7 @@
                 </ul>
 
 
-                <li data-toggle="collapse" data-target="#service" class="collapsed active">
+                <li data-toggle="collapse" data-target="#service" class="collapsed">
                   <a href="#"><i class="fa fa-shopping-basket fa-lg"></i> Products <span class="arrow"></span></a>
                 </li>  
                 <ul class="sub-menu collapse" id="service">
@@ -42,7 +42,7 @@
                   <li>Transaction Logs</li>
                 </ul>
 
-                <li data-toggle="collapse" data-target="#appeareance" class="collapsed">
+                <li data-toggle="collapse" data-target="#appeareance" class="collapsed active">
                   <a href="#"><i class="fa fa-file-image-o fa-lg"></i> Appeareance <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="appeareance">
@@ -57,33 +57,15 @@
    <div class="col-md-10 col-md-offset-1">
         <div class="table-responsive">
                            
-                          <form method="POST" id="h1" action="/insertprod" class="form-group">
+                          <form method="POST" id="h1" action="" class="form-group">
                             {{ csrf_field() }}
                             
                             <table class="table">
                                 
                                     
-                                    <tr >
-                                        <td>
-                                        <select type="text" class="col-md-10 form-control input-sm" name="catname" required data-validation-required-message>
-                                         <option>Select Categories</option>
-                                          @foreach($cat as $value)
-                                            <option>{{ $value->catname }}</option>
-                                          @endforeach  
-                                        </select>
-                                        </td>
-                                    </tr>
+                                   
                                     <tr>
-                                        <td><input type="text" name="proname" class="col-md-10 form-control input-sm" placeholder="product name" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="text" name="prodesc" class="col-md-10 form-control input-sm" placeholder="description" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="text" name="proprice" class="col-md-10 form-control input-sm" placeholder="price" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Image<input type="file" name="proimage" class="col-md-10 form-control input-sm" required></td>
+                                        <td>Logo<input type="file" name="proimage" class="col-md-10 form-control input-sm" required></td>
                                     </tr>
                                     <tr>
                                         <td><input type="submit" name="submit" value="Add"  class="btn btn-primary col-md-10 form-control input-sm"></td>
@@ -97,5 +79,5 @@
         </div>               
 
     </div>
-</div>
+</div>  
 @endsection('content')
