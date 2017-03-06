@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="nav-side-menu">
-    <div class="brand">Menu</div>
+    
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
   
         <div class="menu-list">
@@ -47,7 +47,8 @@
                   <a href="#"><i class="fa fa-file-image-o fa-lg"></i> Appeareance <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="appeareance">
-                    <li><a href="{{ url('/logo') }}"><i></i>Change Logo</a></li>                  
+                    <li><a href="{{ url('/logo') }}"><i></i>Change Logo</a></li> 
+                    <li><a href="{{ url('/color') }}"><i></i>Change color</a></li>                    
                 </ul>
 
 

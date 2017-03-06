@@ -9,7 +9,7 @@
   
             <ul id="menu-content" class="menu-content collapse out">
                 <li>
-                  <a href="#">
+                  <a href="{{ url('/home') }}">
                   <i class="fa fa-dashboard fa-lg"></i> Dashboard
                   </a>
                 </li>
@@ -46,7 +46,8 @@
                   <a href="#"><i class="fa fa-file-image-o fa-lg"></i> Appeareance <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="appeareance">
-                    <li><a href="{{ url('/logo') }}"><i></i>Change Logo</a></li>                  
+                    <li><a href="{{ url('/logo') }}"><i></i>Change Logo</a></li> 
+                     <li><a href="{{ url('/color') }}"><i></i>Change color</a></li>                    
                 </ul>
 
 
@@ -56,6 +57,11 @@
 <div class="container pull-right">
    <div class="col-md-10 col-md-offset-1">
         <div class="table-responsive">
+                     @if(Session::has('flash_message'))
+                        <div class="alert alert-success">
+                            {{ Session::get('flash_message') }}
+                        </div>
+                    @endif
                            
                           <form method="POST" id="h1" action="/insertprod" class="form-group">
                             {{ csrf_field() }}

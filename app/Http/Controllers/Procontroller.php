@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\categories;
 use App\home;
 use App\products;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Input;
 
 
@@ -37,8 +38,18 @@ class Procontroller extends Controller
         $proname->description = Input::get('prodesc');
         $proname->price = Input::get('proprice');
         $proname->image = Input::get('proimage');
+        //$filename = time(). '-' . $file->getClientOriginalName();
+        //$proname = $proname->move(public_path().'/images/', $filename);
+        //$post->image = '/images/'.$filename;
+        //$proname->image = Input::get('proimage');
+       // ->move(public_path().'/images/', $name);
+       // $file = Input::get('proimage');
+
+        
+
         $proname->save();
- 		return back();
+
+ 		return back()->with('flash_message','Product added successfully');
 
 	}
 

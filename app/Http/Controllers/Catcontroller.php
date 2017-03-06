@@ -24,7 +24,7 @@ class Catcontroller extends Controller
 	}
  	function viewcategories()
  	{
- 		$cat = categories::all();
+ 		$cat = categories::all();	
  		return view('categories.viewcategories',compact("cat"));
  	}
  	public function insert(Request $request)// To add categories into database
@@ -32,7 +32,7 @@ class Catcontroller extends Controller
  		$catname = new categories;
  		$catname->catname = Input::get('catname');
  		$catname->save();
- 		return back();
+ 		return back()->with('flash_message','Categories added successfully');
 
 
  	}
@@ -40,7 +40,7 @@ class Catcontroller extends Controller
  	public function delete($id)
  	{
  		$cat = categories::where('ID',$id)->delete();    
-		return back();
+		return back()->with('flash_message','Category Deleted');
 		
  	}
 

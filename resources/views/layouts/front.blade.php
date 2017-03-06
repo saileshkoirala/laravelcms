@@ -19,12 +19,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 <!--//fonts-->
 <script src="{{ URL::asset('js/jquery.min.js') }}"></script>
+
+
 <!--script-->
+<style type="text/css">
+
+    .top-header{
+    
+    padding: 0.7em 0;
+}
+</style>
 </head>
 <body> 
+
 	<!--header-->
+
 	<div class="header">
-		<div class="top-header">
+    @foreach($col as $col1)    
+		<div style="background: {{ ($col1->colname) }}" class="top-header">
+    @endforeach
 			<div class="container">
 				<div class="top-header-left">
 					<ul class="support">
@@ -56,9 +69,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="bottom-header">
 			<div class="container">
 				<div class="header-bottom-left">
+                  @foreach($img as $limg)
 					<div class="logo">
-						<a href="index.html"><img src="{{ URL::asset('images/logo.png') }}" alt=" " /></a>
+                  
+						<a href="index.html"><img src="{{ ($limg->image) }}" alt=" " height="50" width="100" /></a>
+                          
 					</div>
+                  @endforeach
 					<div class="search">
 						<input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
 						<input type="submit"  value="SEARCH">

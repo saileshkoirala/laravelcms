@@ -38,7 +38,13 @@ Route::get('/viewproduct','Procontroller@viewproduct');
 
 Route::post('/insertprod','Procontroller@insertprod');
 
-Route::get('/logo','Logocontroller@changelogo');
+Route::get('/logo','Logocontroller@changeLogo');
+
+Route::post('/updatelogo','Logocontroller@updateLogo');
+
+Route::get('/color','Colorcontroller@changeColor');
+
+Route::post('/updatecolor','Colorcontroller@updateColor');
 
 /* ********** Front end (ecommerce site)************* */
 
@@ -46,7 +52,9 @@ Route::get('/','Frontcontroller@front');
 
 Route::get('/product','Frontcontroller@product');
 
-Route::get('/product','Frontcontroller@front');
+//Route::get('/product','Frontcontroller@front');
+
+//Route::get('/','Frontcontroller@viewlogo');
 
 
 

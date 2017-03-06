@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\logo;
 use App\Http\Requests;
+use App\logoimages;
+use Illuminate\Support\Facades\Input;
 
 class Logocontroller extends Controller
 {
@@ -12,20 +14,26 @@ class Logocontroller extends Controller
     {
         $this->middleware('auth');
     }
-    /*public function changelogo()
-    {
-    	$chlogo = new logo;
-    	$chlogo->logoimg = Input::get('logoname');
-    	$chlogo->save();
-    	return back();
+   
 
-    }*/
-
-     public function changelogo()
+     public function changeLogo()
      {
      	return view('appeareance.logo');
      }
 
+      public function updateLogo(Request $request)
+    {
+        
+        $chlogo = new logoimages;
+        
+        $chlogo->image = Input::get('logoname'); 
+        
+        $chlogo->save();
+        return back()->with('flash_message','Logo Updated');
+        
 
+    }
+
+   
 
 }
