@@ -71,10 +71,10 @@
                                     
                                     <tr >
                                         <td>
-                                        <select type="text" class="col-md-10 form-control input-sm" name="catname" required data-validation-required-message>
-                                         <option>Select Categories</option>
-                                          @foreach($cat as $value)
-                                            <option>{{ $value->catname }}</option>
+                                        <select type="text" class="col-md-10 form-control input-sm" name="subcat" required data-validation-required-message>
+                                         <option>Select Sub-Categories</option>
+                                          @foreach($scat as $value)
+                                            <option>{{ $value->subcatname }}</option>
                                           @endforeach  
                                         </select>
                                         </td>

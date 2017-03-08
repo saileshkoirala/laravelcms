@@ -6,8 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class products extends Model
 {
-    protected $fillable = ['catname', 'productname','description','price','image'];
+    protected $fillable = ['subcatname','prodname','prodesc','price','image'];
     
 
-    public $timestamps = false;
+
+    public function subcategories()
+    {
+    	$this->belongsTo('App\subcategories');
+    }
 }

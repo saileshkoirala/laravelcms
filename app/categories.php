@@ -8,7 +8,13 @@ class categories extends Model
 	{
     protected $fillable = [ 'catname' ];
 
-    public $timestamps = false;
+
+
+    public function subcategories()
+    {
+    	return $this->hasMany('App\subcategories');
+
+    }
 
     
 }

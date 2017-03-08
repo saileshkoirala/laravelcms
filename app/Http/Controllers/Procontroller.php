@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\categories;
+use App\subcategories;
 use App\home;
 use App\products;
 use Carbon\Carbon;
@@ -22,8 +23,8 @@ class Procontroller extends Controller
 
     public function addproduct()
     {
-    	$cat = categories::all();
-    	return view('products.addproduct',compact("cat"));
+    	$scat = subcategories::all();
+    	return view('products.addproduct',compact("scat"));
     	
     }
 
@@ -33,20 +34,11 @@ class Procontroller extends Controller
         //Input::file('file')->move(base_path() . 'public');
        
  		$proname = new products;
- 		$proname->catname = Input::get('catname');
- 		$proname->productname = Input::get('proname');
-        $proname->description = Input::get('prodesc');
+        $proname->p_id = subcategories::where('subcatname','=',$request->input('subcat'))->pluck('id')[0];
+ 		$proname->prodname = Input::get('proname');
+        $proname->prodesc = Input::get('prodesc');
         $proname->price = Input::get('proprice');
         $proname->image = Input::get('proimage');
-        //$filename = time(). '-' . $file->getClientOriginalName();
-        //$proname = $proname->move(public_path().'/images/', $filename);
-        //$post->image = '/images/'.$filename;
-        //$proname->image = Input::get('proimage');
-       // ->move(public_path().'/images/', $name);
-       // $file = Input::get('proimage');
-
-        
-
         $proname->save();
 
  		return back()->with('flash_message','Product added successfully');

@@ -23,11 +23,8 @@ class Colorcontroller extends Controller
 
       public function updateColor(Request $request)
     {
-        
         $chcolor = new Colors;
-        
         $chcolor->colname = Input::get('colorname'); 
-        
         $chcolor->save();
         return back()->with('flash_message', 'Color Changed Successfully');
         

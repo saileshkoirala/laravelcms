@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\categories;
 use App\home;
+use App\subcategories;
 use Illuminate\Support\Facades\Input;
 
 
@@ -36,10 +37,31 @@ class Catcontroller extends Controller
 
 
  	}
+ 	
+
+ 	function addsubcategories()
+ 	{
+ 		$option = categories::all();
+ 		return view('categories.subcategories',compact('option'));
+ 	}
+
+
+ 	public function insertsub(Request $request)
+ 	{
+
+
+ 		$subcat = new subcategories;
+ 		$subcat->sub_id = categories::where('catname','=',$request->input('catname'))->pluck('id')[0];
+       	$subcat->subcatname	 = Input::get('subcatname');
+		$subcat->image = Input::get('subimage');
+ 		$subcat->save();
+ 		return back();
+
+ 	}
 
  	public function delete($id)
  	{
- 		$cat = categories::where('ID',$id)->delete();    
+ 		$cat = categories::where('id',$id)->delete();    
 		return back()->with('flash_message','Category Deleted');
 		
  	}

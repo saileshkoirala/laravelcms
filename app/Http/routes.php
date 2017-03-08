@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 
+
 });
 
 Route::auth(); 	
@@ -27,6 +28,10 @@ Route::get('/addcategories','Catcontroller@addcategories');
 Route::get('/viewcategories','Catcontroller@viewcategories');
 
 Route::post('/insert','Catcontroller@insert');
+
+Route::get('/subcategories','Catcontroller@addsubcategories');
+
+Route::post('/insertsub','Catcontroller@insertsub');
 
 Route::get('delete/{id}','Catcontroller@delete');
 
@@ -52,9 +57,8 @@ Route::get('/','Frontcontroller@front');
 
 Route::get('/product','Frontcontroller@product');
 
-//Route::get('/product','Frontcontroller@front');
 
-//Route::get('/','Frontcontroller@viewlogo');
+
 
 
 

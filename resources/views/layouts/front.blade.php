@@ -378,23 +378,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                <div class="sub-cate">
                 <div class=" top-nav rsidebar span_1_of_left">
                     <h3 class="cate">CATEGORIES</h3>
+    @foreach($pro as $value)  
     <ul class="menu">
-         @foreach($pro as $value)
         <li class="item1"><a href="">{{ $value->catname }}<img class="arrow-img" src="{{ URL::asset('images/arrow1.png') }}" alt=""/> </a>
-            
-                <ul class="cute">
-                   
-                @foreach($pro as $value1) 
-                      @if($value->catname == $value1->catname)  
-                        <li class="subitem1"><a href="{{ url('\product') }}">{{ $value1->productname }}</a></li>
+            <ul class="cute">
+                @foreach($sub as $value1) 
+                      @if($value1->sub_id == $value->id)  
+                        <li class="subitem1"><a href="{{ url('product') }}">{{ $value1->subcatname }}</a></li>  
+                             @foreach($prod as $value2)
+                                @if($value2->p_id == $value1->id)
+                                    <li class="subitem1"><a href="{{ url('single') }}" style="font-size:11px; ">{{ $value2->prodname }}</a></li> 
+                                @endif 
+                             @endforeach
                       @endif
-                @endforeach
-
-                </ul>
-              
-        </li>
-        @endforeach
-    </ul>
+                @endforeach   
+            </ul>   
+         </li>
+    </ul> 
+    @endforeach 
     </div>
 	<!---->
 @yield('front_content')
