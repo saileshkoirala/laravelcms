@@ -25,8 +25,9 @@ class Catcontroller extends Controller
 	}
  	function viewcategories()
  	{
- 		$cat = categories::all();	
- 		return view('categories.viewcategories',compact("cat"));
+ 		$cat = categories::all();
+ 		$scat = subcategories::all();	
+ 		return view('categories.viewcategories',compact("cat","scat"));
  	}
  	public function insert(Request $request)// To add categories into database
  	{
@@ -55,16 +56,26 @@ class Catcontroller extends Controller
        	$subcat->subcatname	 = Input::get('subcatname');
 		$subcat->image = Input::get('subimage');
  		$subcat->save();
- 		return back();
+ 		return back()->with('flash_message','sub category added successfully');;
 
  	}
 
- 	public function delete($id)
+ 	public function deletecat($id)
  	{
- 		$cat = categories::where('id',$id)->delete();    
+ 		$cat = categories::where('id',$id)->delete(); 
+ 	   
 		return back()->with('flash_message','Category Deleted');
 		
  	}
+
+ 	public function deletescat($sid)
+ 	{
+ 		$scat = subcategories::where('id',$sid)->delete(); 
+ 	   
+		return back()->with('flash_message','subcategory Deleted');
+		
+ 	}
+
 
  	public function edit($id)
  	{

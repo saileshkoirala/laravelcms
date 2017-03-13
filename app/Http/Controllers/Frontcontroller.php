@@ -37,8 +37,17 @@ class Frontcontroller extends Controller
 
  	public function product()
  	{
-
- 		return view('webpage.product');
+ 		$pro = categories::groupBy('catname')->get();
+ 		$sub = subcategories::all();
+       // $getsub = subcategories::where(); //validating
+ 		//$prod = products::groupBy('p_id')->where('p_id',$getsub)->get();
+ 		$prod = products::all();
+ 		$lastlogo = logoimages::orderBy('created_at', 'desc')->first()->id;
+ 		$img = logoimages::where('id',$lastlogo)->get();
+ 		$lastrec = Colors::orderBy('created_at', 'desc')->first()->colname;
+		$col = Colors::where('colname',$lastrec)->get();
+ 		return view('webpage.product',compact("img","pro","sub","col","prod"));
+		
 
  	}
 

@@ -20,6 +20,7 @@
                 <ul class="sub-menu collapse" id="products">
                     <li><a href="{{ url('/viewcategories')}}"><i></i>viewCategories</a></li>
                     <li><a href="{{ url('/addcategories') }}"><i></i>Add Categories</a></li>
+                    <li><a href="{{ url('/subcategories') }}"><i></i>Add Sub Categories</a></li>
                     
                 </ul>
 

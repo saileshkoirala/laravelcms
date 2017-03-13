@@ -20,6 +20,7 @@
                 <ul class="sub-menu collapse" id="products">
                     <li><a href="{{ url('/viewcategories')}}"><i></i>viewCategories</a></li>
                     <li><a href="{{ url('/addcategories') }}"><i></i>Add Categories</a></li>
+                    <li><a href="{{ url('/subcategories') }}"><i></i>Add Sub Categories</a></li>
                     
                 </ul>
 
@@ -65,20 +66,29 @@
                   @endif
                     <center>
                         <form id="h2">
-                             <table class="table">
+                             <table class="table table-striped">
                                     <br/><tr>
                                         
                                         <th>categories</th>
+                                        <th>sub categories</th>
                                         
                                     </tr>
                                    @foreach($cat as $value)
                                     <tr width="80%">
                                         
-                                        <td width="60%">{{ $value->catname }}</td>  
-                                        <td>
-                                        <a href="edit/{{ $value->id }}" class="btn btn-primary ">Edit</a>&nbsp;
-                                        <a href="delete/{{ $value->ID }}" class="btn btn-danger">Delete</a>
+                                        <td width="30%" >{{ $value->catname }}   
+                                          <a href="edit/{{ $value->id }}"><span class="glyphicon glyphicon-edit"></span></a>&nbsp;
+                                          <a href="deletecat/{{ $value->id }}"><span class="glyphicon glyphicon-trash"></span></a>
                                         </td>
+                                        @foreach($scat as $value1)
+                                          @if($value1->sub_id == $value->id)
+                                            <td class="list-group-item">{{ $value1->subcatname}}
+                                            <a href="edit/{{ $value1->id }}"><span class="glyphicon glyphicon-edit"></span></a>&nbsp;
+                                            <a href="deletescat/{{ $value1->id }}"><span class="glyphicon glyphicon-trash"></span></a>
+                                            </td>
+                                          @endif
+                                         @endforeach  
+                                        
                                     </tr>  
                                  @endforeach
                             </table>

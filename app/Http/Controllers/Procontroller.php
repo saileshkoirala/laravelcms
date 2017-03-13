@@ -29,10 +29,12 @@ class Procontroller extends Controller
     }
 
 
-    public function insertprod(Request $request)// To add categories into database
+    public function insertprod(Request $request)// To add products into database
  	{
-        //Input::file('file')->move(base_path() . 'public');
-       
+
+
+
+
  		$proname = new products;
         $proname->p_id = subcategories::where('subcatname','=',$request->input('subcat'))->pluck('id')[0];
  		$proname->prodname = Input::get('proname');
@@ -40,15 +42,22 @@ class Procontroller extends Controller
         $proname->price = Input::get('proprice');
         $proname->image = Input::get('proimage');
         $proname->save();
-
- 		return back()->with('flash_message','Product added successfully');
+        return back()->with('flash_message','Product added successfully');
 
 	}
+
 
     function viewproduct()
     {
         $pro = products::all();
         return view('products.viewproduct',compact("pro"));
+    }
+
+    public function delete($id)
+    {
+        $pro = products::where('id',$id)->delete();    
+        return back()->with('flash_message','Product Deleted');
+        
     }
 }
 

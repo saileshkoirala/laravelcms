@@ -33,7 +33,9 @@ Route::get('/subcategories','Catcontroller@addsubcategories');
 
 Route::post('/insertsub','Catcontroller@insertsub');
 
-Route::get('delete/{id}','Catcontroller@delete');
+Route::get('deletecat/{id}','Catcontroller@deletecat');
+
+Route::get('deletescat/{sid}','Catcontroller@deletescat');
 
 Route::get('edit/{id}','Catcontroller@edit');
 
@@ -42,6 +44,8 @@ Route::get('/addproduct','Procontroller@addproduct');
 Route::get('/viewproduct','Procontroller@viewproduct');
 
 Route::post('/insertprod','Procontroller@insertprod');
+
+Route::get('delete/{id}','Procontroller@delete');
 
 Route::get('/logo','Logocontroller@changeLogo');
 

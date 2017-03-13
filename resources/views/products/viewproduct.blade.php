@@ -14,17 +14,18 @@
                   </a>
                 </li>
 
-                <li  data-toggle="collapse" data-target="#products" class="collapsed active">
+                <li  data-toggle="collapse" data-target="#products" class="collapsed">
                   <a href="#"><i class="fa fa-shopping-bag fa-lg"></i> Categories <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="products">
                     <li><a href="{{ url('/viewcategories')}}"><i></i>viewCategories</a></li>
                     <li><a href="{{ url('/addcategories') }}"><i></i>Add Categories</a></li>
+                    <li><a href="{{ url('/subcategories') }}"><i></i>Add Sub Categories</a></li>
                     
                 </ul>
 
 
-                <li data-toggle="collapse" data-target="#service" class="collapsed">
+                <li data-toggle="collapse" data-target="#service" class="collapsed active">
                   <a href="#"><i class="fa fa-shopping-basket fa-lg"></i> Products <span class="arrow"></span></a>
                 </li>  
                 <ul class="sub-menu collapse" id="service">
@@ -56,23 +57,36 @@
 </div>
 <div class="container pull-right">
    <div class="col-md-10 col-md-offset-1">
+    @if(Session::has('flash_message'))
+      <div class="alert alert-danger">
+         {{ Session::get('flash_message') }}
+      </div>            
+    @endif
         <div class="table-responsive">
         		     
                           <form method="POST" id="h1" action="/insertprod" class="form-group">
                             {{ csrf_field() }}
                             
-                            <table class="table">
-                                
+                            <table class="table table-striped">
+                                <th></th>
+                                <th>Product Name</th>
+                                <th>Product Description</th>
+                                <th>Product Price</th>
+                                <th></th>
                             @foreach($pro as $value)
                                 <tr width="80%">
                                     
-                                    <td width="60%"><img src="{{ $value->image }}"  height="100" width="100"></td>  
-                                    <td>
-                                    <a href="edit/{{ $value->id }}" class="btn btn-primary ">Edit</a>&nbsp;
-                                    <a href="delete/{{ $value->ID }}" class="btn btn-danger">Delete</a>
+                                    <td><img src="{{ $value->image }}"  width="80"></td>  
+                                    <td>{{ $value->prodname }} </td>  
+                                    <td>{{ $value->prodesc }}</td>
+                                    <td>{{ $value->price }}</td>
+
+                                    <td width="20%">
+                                      <a href="edit/{{ $value->id }}" class="btn btn-primary ">Edit</a>&nbsp;
+                                      <a href="delete/{{ $value->id }}" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>  
-                             @endforeach
+                            @endforeach
                                     
                                 
                                 
