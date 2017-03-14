@@ -23,7 +23,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <!--script-->
 <style type="text/css">
-
     .top-header{
     
     padding: 0.7em 0;
@@ -72,7 +71,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                   @foreach($img as $limg)
 					<div class="logo">
                   
-						<a href="index.html"><img src="{{ ($limg->image) }}" alt=" " height="50" width="100" /></a>
+						<a href="{{ url('/') }}"><img src="{{ URL::asset($limg->image) }}" alt=" " height="50" width="100" /></a>
                           
 					</div>
                   @endforeach
@@ -94,6 +93,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="clearfix"> </div>	
 			</div>
+
 		</div>
 	</div>
 	@yield('front_content1')
@@ -107,10 +107,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <ul class="cute">
                                 @foreach($sub as $value1) 
                                       @if($value1->sub_id == $value->id)  
-                                        <li class="subitem1"><a href="{{ url('product') }}">{{ $value1->subcatname }}</a></li>  
+                                        <li class="subitem1"><a href="/product/{{ $value1->id }}">{{ $value1->subcatname }}</a></li>  
                                              @foreach($prod as $value2)
                                                 @if($value2->p_id == $value1->id)
-                                                    <li class="subitem1"><a href="{{ url('single') }}" style="font-size:11px; color:#696969;">{{ $value2->prodname }}</a></li> 
+                                                    <li class="subitem1"><a href="/single/{{ $value2->id }}" style="font-size:11px; color:#696969;">{{ $value2->prodname }}</a></li> 
                                                 @endif 
                                              @endforeach
                                       @endif

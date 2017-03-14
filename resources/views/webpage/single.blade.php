@@ -2,49 +2,93 @@
 
  @section('front_content1')
 
-    <!-- start content -->
-    <div class="container">
-        <div class="women-product">
-                <div class=" w_content">
-                    <div class="women">
-                        <a href="#"><h4>Products<span></span></h4></a>
-                        <ul class="w_nav">
-                            <li>Sort : </li>
-                            <li><a class="active" href="#">popular</a></li> |
-                            <li><a href="#">new </a></li> |
-                            <li><a href="#">discount</a></li> |
-                            <li><a href="#">price: Low High </a></li> 
-                         <div class="clearfix"> </div>  
-                         </ul>
-                         <div class="clearfix"> </div>  
-                    </div>
-                </div>
-              <div class="grid-product">
+
+        <div class="container"> 
+        
+        <div class=" single_top">
+          <div class="single_grid">
+                <div class="grid images_3_of_2">
+                        <ul id="etalage">
+                            <li>
+                                <a href="optionallink.html">
+
+                                @foreach($prod as $value)
+                                    <img class="etalage_thumb_image" src="{{ URL::asset( $value->image ) }}" class="img-responsive" width="50%" />
+                            
+                                </a>
+                            </li>
+                           
+                        </ul>
+                         <div class="clearfix"> </div>      
+                  </div> 
+                  <div class="desc1 span_3_of_2">
+                  
+                    
+                    <h4>{{ $value->prodname }}</h4>
+                <div class="cart-b">
+                    <div class="left-n ">Rs.{{ $value->price }}</div>
+                    <a class="now-get get-cart-in" href="#">ADD TO CART</a> 
+                    <div class="clearfix"></div>
+                 </div>
+                 <h6>100 items in stock</h6>
+                <p>{{ $value->prodesc }}</p>
+                <div class="share">
+                            <h5>Share Product :</h5>
+                            <ul class="share_nav">
+                                <li><a href="#"><img src="{{ URL::asset('images/facebook.png') }}" title="facebook"></a></li>
+                                <li><a href="#"><img src="{{ URL::asset('images/twitter.png') }}" title="Twiiter"></a></li>
+                                <li><a href="#"><img src="{{ URL::asset('images/rss.png') }}" title="Rss"></a></li>
+                                <li><a href="#"><img src="{{ URL::asset('images/gpluse.png') }}" title="Google+"></a></li>
+                            </ul>
+                        </div>
+               
+                
+                </div>   @endforeach
+                <div class="clearfix"> </div>
+               </div>
+               <ul id="flexiselDemo1">
                @foreach($prod as $value)
-                 @foreach($sub as $value1)
-                 
-                      @if($value->p_id == $value1->id)                  
-                       <div class="product-grid">
-                            <div class="content_box"><a href="single.html">
-                                <div class="left-grid-view">
-                                     <img src="{{ URL::asset($value->image) }}" class="img-responsive watch-right"   width="40"  alt=""/>
-                                        <div class="mask">
-                                            <div class="info">Quick View</div>
-                                        </div>
-                                      </a>
 
+                 <li><img src="{{ ($value->image) }}" height="80" /><div class="grid-flex"><a href="#">{{ $value->prodname }}</a><p>Rs {{ $value->price }}</p></div></li>
+               @endforeach   
+           
+         </ul>
+        <script type="text/javascript">
+         $(window).load(function() {
+            $("#flexiselDemo1").flexisel({
+                visibleItems: 5,
+                animationSpeed: 1000,
+                autoPlay: true,
+                autoPlaySpeed: 3000,            
+                pauseOnHover: true,
+                enableResponsiveBreakpoints: true,
+                responsiveBreakpoints: { 
+                    portrait: { 
+                        changePoint:480,
+                        visibleItems: 1
+                    }, 
+                    landscape: { 
+                        changePoint:640,
+                        visibleItems: 2
+                    },
+                    tablet: { 
+                        changePoint:768,
+                        visibleItems: 3
+                    }
+                }
+            });
+            
+        });
+    </script>
+    <script type="text/javascript" src="js/jquery.flexisel.js"></script>
 
-                            </div>
-                                    <h4><a href="/single/{{ $value->id }}"> {{ $value->prodname }}</a></h4>
-                                     <p></p>
-                                     Rs. {{ $value->price }}
-                       </div>
-                          </div>
-                       @endif
-                    @endforeach
-                @endforeach
-                 </div> 
-    </div>
+                    <div class="toogle">
+                        <h3 class="m_3">Product Details</h3>
+                        @foreach($prod as $value)
+                         <p class="m_text">{{ $value->prodesc }}</p>
+                        @endforeach
+                     </div> 
+               </div>
    
    
 @endsection

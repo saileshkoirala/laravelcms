@@ -59,7 +59,9 @@ Route::post('/updatecolor','Colorcontroller@updateColor');
 
 Route::get('/','Frontcontroller@front');
 
-Route::get('/product','Frontcontroller@product');
+Route::get('/product/{id}','Frontcontroller@product');
+
+Route::get('/single/{id}','Frontcontroller@single');
 
 
 
