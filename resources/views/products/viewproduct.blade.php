@@ -85,15 +85,16 @@
                                       <a href="edit/{{ $value->id }}" class="btn btn-primary ">Edit</a>&nbsp;
                                       <a href="delete/{{ $value->id }}" class="btn btn-danger">Delete</a>
                                     </td>
-                                </tr>  
+                                </tr>    
                             @endforeach
+
                                     
+                              
                                 
-                                
-                            </table>
+                            </table>   
                         </form>                      
                      
-                   
+                  
         </div> 
     </div>
 </div>  

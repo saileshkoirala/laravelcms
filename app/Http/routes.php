@@ -63,6 +63,10 @@ Route::get('/product/{id}','Frontcontroller@product');
 
 Route::get('/single/{id}','Frontcontroller@single');
 
+/******************************************************/
+
+Route::resource('/cart','CartController');
+
 
 
 

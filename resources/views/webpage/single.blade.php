@@ -4,6 +4,11 @@
 
 
         <div class="container"> 
+         @if(Session::has('flash_message'))
+                  <div class="alert alert-success">
+                      {{ Session::get('flash_message') }}
+                  </div>
+                @endif
         
         <div class=" single_top">
           <div class="single_grid">
@@ -27,7 +32,7 @@
                     <h4>{{ $value->prodname }}</h4>
                 <div class="cart-b">
                     <div class="left-n ">Rs.{{ $value->price }}</div>
-                    <a class="now-get get-cart-in" href="#">ADD TO CART</a> 
+                    <a class="now-get get-cart-in" href="{{ route('cart.edit',$value->id) }}">ADD TO CART</a> 
                     <div class="clearfix"></div>
                  </div>
                  <h6>100 items in stock</h6>
@@ -46,13 +51,13 @@
                 </div>   @endforeach
                 <div class="clearfix"> </div>
                </div>
-               <ul id="flexiselDemo1">
+        <ul id="flexiselDemo1">
                @foreach($prod as $value)
 
-                 <li><img src="{{ ($value->image) }}" height="80" /><div class="grid-flex"><a href="#">{{ $value->prodname }}</a><p>Rs {{ $value->price }}</p></div></li>
+                 <li><img src=src="{{ URL::asset( $value->image ) }}" height="80" /><div class="grid-flex"><a href="#">{{ $value->prodname }}</a><p>Rs {{ $value->price }}</p></div></li>
                @endforeach   
            
-         </ul>
+        </ul>
         <script type="text/javascript">
          $(window).load(function() {
             $("#flexiselDemo1").flexisel({
