@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\categories;
-use App\subcategories;
+use App\brands;
 use App\home;
 use App\products;
 use Carbon\Carbon;
@@ -23,8 +23,8 @@ class Procontroller extends Controller
 
     public function addproduct()
     {
-    	$scat = subcategories::all();
-    	return view('products.addproduct',compact("scat"));
+    	$brand = brands::all();
+    	return view('products.addproduct',compact("brand"));
     	
     }
 
@@ -36,7 +36,7 @@ class Procontroller extends Controller
 
 
  		$proname = new products;
-        $proname->p_id = subcategories::where('subcatname','=',$request->input('subcat'))->pluck('id')[0];
+        $proname->p_id = brands::where('brandname','=',$request->input('subcat'))->pluck('id')[0];
  		$proname->prodname = Input::get('proname');
         $proname->prodesc = Input::get('prodesc');
         $proname->price = Input::get('proprice');

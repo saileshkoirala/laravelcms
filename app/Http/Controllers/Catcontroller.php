@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\categories;
 use App\home;
 use App\subcategories;
+use App\brands;
 use Illuminate\Support\Facades\Input;
 
 
@@ -26,8 +27,9 @@ class Catcontroller extends Controller
  	function viewcategories()
  	{
  		$cat = categories::all();
- 		$scat = subcategories::all();	
- 		return view('categories.viewcategories',compact("cat","scat"));
+ 		$scat = subcategories::all();
+ 		$bname = brands::all();	
+ 		return view('categories.viewcategories',compact("cat","scat","bname"));
  	}
  	public function insert(Request $request)// To add categories into database
  	{
@@ -56,8 +58,23 @@ class Catcontroller extends Controller
        	$subcat->subcatname	 = Input::get('subcatname');
 		$subcat->image = Input::get('subimage');
  		$subcat->save();
- 		return back()->with('flash_message','sub category added successfully');;
+ 		return back()->with('flash_message','sub category added successfully');
 
+ 	}
+
+ 	function addbrand()
+ 	{
+ 		$brandoption = subcategories::all();
+ 		return view('categories.brand',compact('brandoption'));
+ 	}
+
+ 	public function insertbrand(Request $request)
+ 	{
+ 		$bname = new brands;
+ 		$bname->b_id = subcategories::where('subcatname','=',$request->input('subcatname'))->pluck('id')[0];
+ 		$bname->brandname = Input::get('brandname');
+ 		$bname->save();
+ 		return back()->with('flash_message','Successfully added');
  	}
 
  	public function deletecat($id)
@@ -74,6 +91,12 @@ class Catcontroller extends Controller
  	   
 		return back()->with('flash_message','subcategory Deleted');
 		
+ 	}
+
+ 	public function deletebrand($bid)
+ 	{
+ 		$bname = brands::where('id',$bid)->delete();
+ 		return back()->with('flash_message','Successfully Deleted');
  	}
 
 

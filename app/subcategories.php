@@ -15,6 +15,11 @@ class subcategories extends Model
 		$this->belongsTo('App\categories');
 	}
 
+	public function brands()
+	{
+		$this->hasMany('App\brands');
+	}
+
     /*public function products()
     {
     	$this->hasMany('App\products');

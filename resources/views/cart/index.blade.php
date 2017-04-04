@@ -71,7 +71,7 @@
                         <form action="{{route('cart.destroy',$cartItem->rowId)}}"  method="POST">
                            {{csrf_field()}}
                            {{method_field('DELETE')}}
-                           <input class="pull-right btn btn-danger btn-sm" type="submit" value="Delete">
+                           <input class="pull-right btn btn-danger btn-sm" type="submit" value="Remove">
                          </form>
                     </td>
                 </tr>
@@ -82,12 +82,14 @@
                 <td>
                     
                     Total: Rs {{Cart::subtotal()}} 
+               
+
                    
                 </td>
                 <td>Items: {{Cart::count()}}
 
                 </td>
-                <td class="btn btn-primary btn-sm"><a href="/" style="text-decoration:none; color:#ffffff;" >Continue Shopping</a></td>
+                <td class="btn btn-primary btn-sm "><a href="/" style="text-decoration:none; color:#ffffff;" >Continue Shopping</a></td>
                 <td class="pull-right btn btn-success btn-sm">Checkout</td>
 
             </tr>

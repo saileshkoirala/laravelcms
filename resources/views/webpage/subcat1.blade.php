@@ -7,7 +7,13 @@
         <div class="women-product">
                 <div class=" w_content">
                     <div class="women">
-                        <a href="#"><h4>Brands<span></span></h4></a>
+                     @foreach($brand as $value)
+                        @foreach($prod as $value1)
+                           @if($value1->p_id == $value->id)  
+                            <a href="#"><h4>{{ $value->brandname }}<span></span></h4></a>
+                           @endif 
+                        @endforeach
+                     @endforeach       
                         <ul class="w_nav">
                             <li>Sort : </li>
                             <li><a class="active" href="#">popular</a></li> |
@@ -20,14 +26,14 @@
                     </div>
                 </div>
               <div class="grid-product">
-               @foreach($sub as $value)
-                 @foreach($brand as $value1)
+               @foreach($brand as $value)
+                 @foreach($prod as $value1)
                  
-                      @if($value1->b_id == $value->id)                  
+                      @if($value1->p_id == $value->id)                  
                        <div class="product-grid">
                             <div class="content_box"><a href="single.html">
                                 <div class="left-grid-view">
-                                     <img src="{{ URL::asset($value->image) }}" class="img-responsive watch-right"   width="40"  alt=""/>
+                                     <img src="{{ URL::asset($value1->image) }}" class="img-responsive watch-right"   width="40"  alt=""/>
                                         <div class="mask">
                                             <div class="info">Quick View</div>
                                         </div>
@@ -35,10 +41,11 @@
 
 
                             </div>
-                                    <h4><a href="/subcat1/{{ $value1->id }}"> {{ $value1->brandname }}</a></h4>
+                                    <h4><a href="/single/{{ $value1->id }}"> {{ $value1->prodname }}</a></h4>
+                                        Rs. {{ $value1->price }}
                                      <p></p>
                                      
-                       </div>
+                       </div>  
                           </div>
                        @endif
                     @endforeach

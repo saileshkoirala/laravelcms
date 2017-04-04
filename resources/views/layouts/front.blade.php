@@ -107,12 +107,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <ul class="cute">
                                 @foreach($sub as $value1) 
                                       @if($value1->sub_id == $value->id)  
-                                        <li class="subitem1"><a href="/product/{{ $value1->id }}">{{ $value1->subcatname }}</a></li>  
-                                             @foreach($prod as $value2)
-                                                @if($value2->p_id == $value1->id)
-                                                    <li class="subitem1"><a href="/single/{{ $value2->id }}" style="font-size:11px; color:#696969;">{{ $value2->prodname }}</a></li> 
-                                                @endif 
-                                             @endforeach
+                                        <li class="subitem1"><a href="/product/{{ $value1->id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $value1->subcatname }}</a></li> 
+                                          @foreach($brand as $value2) 
+	                                          	@if($value2->b_id == $value1->id)
+	                                          	 <li class="subitem1"><a href="/subcat1/{{ $value2->id }}" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $value2->brandname }}</a></li>  
+		                                             @foreach($prod as $value3)
+		                                                @if($value3->p_id == $value2->id)
+		                                                    <li class="subitem1"><a href="/single/{{ $value3->id }}" style="font-size:11px; color:#696969;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $value3->prodname }}</a></li> 
+		                                                @endif 
+		                                             @endforeach
+		                                        @endif          
+                                          @endforeach   
                                       @endif
                                 @endforeach   
                             </ul>   

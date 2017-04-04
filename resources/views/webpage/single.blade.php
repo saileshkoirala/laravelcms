@@ -16,8 +16,9 @@
                         <ul id="etalage">
                             <li>
                                 <a href="optionallink.html">
-
+                            
                                 @foreach($prod as $value)
+                                   
                                     <img class="etalage_thumb_image" src="{{ URL::asset( $value->image ) }}" class="img-responsive" width="50%" />
                             
                                 </a>
@@ -46,9 +47,9 @@
                                 <li><a href="#"><img src="{{ URL::asset('images/gpluse.png') }}" title="Google+"></a></li>
                             </ul>
                         </div>
-               
-                
-                </div>   @endforeach
+                        
+                            @endforeach
+                </div>   
                 <div class="clearfix"> </div>
                </div>
         <ul id="flexiselDemo1">
@@ -87,12 +88,12 @@
     </script>
     <script type="text/javascript" src="js/jquery.flexisel.js"></script>
 
-                    <div class="toogle">
+                   <!-- <div class="toogle">
                         <h3 class="m_3">Product Details</h3>
                         @foreach($prod as $value)
                          <p class="m_text">{{ $value->prodesc }}</p>
                         @endforeach
-                     </div> 
+                     </div> -->
                </div>
    
    
@@ -107,10 +108,7 @@
                 <div class="latter">
                     <h6>NEWS-LETTER</h6>
                     <div class="sub-left-right">
-                        <form>
-                            <input type="text" value="Enter email here"onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter email here';}" />
-                            <input type="submit" value="SUBSCRIBE" />
-                        </form>
+                      
                     </div>
                     <div class="clearfix"> </div>
                 </div>
@@ -131,18 +129,9 @@
                 <div class="footer-bottom-cate">
                     <h6>CATEGORIES</h6>
                     <ul>
-                        <li><a href="#">Curabitur sapien</a></li>
-                        <li><a href="#">Dignissim purus</a></li>
-                        <li><a href="#">Tempus pretium</a></li>
-                        <li ><a href="#">Dignissim neque</a></li>
-                        <li ><a href="#">Ornared id aliquet</a></li>
-                        <li><a href="#">Ultrices id du</a></li>
-                        <li><a href="#">Commodo sit</a></li>
-                        <li ><a href="#">Urna ac tortor sc</a></li>
-                        <li><a href="#">Ornared id aliquet</a></li>
-                        <li><a href="#">Urna ac tortor sc</a></li>
-                        <li ><a href="#">Eget nisi laoreet</a></li>
-                        <li ><a href="#">Faciisis ornare</a></li>
+                        @foreach($pro as $value)
+                        <li><a href="#">{{ $value->catname }}</a></li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="footer-bottom-cate bottom-grid-cat">
@@ -160,18 +149,9 @@
                 <div class="footer-bottom-cate">
                     <h6>TOP BRANDS</h6>
                     <ul>
-                        <li><a href="#">Curabitur sapien</a></li>
-                        <li><a href="#">Dignissim purus</a></li>
-                        <li><a href="#">Tempus pretium</a></li>
-                        <li ><a href="#">Dignissim neque</a></li>
-                        <li ><a href="#">Ornared id aliquet</a></li>
-                        <li><a href="#">Ultrices id du</a></li>
-                        <li><a href="#">Commodo sit</a></li>
-                        <li ><a href="#">Urna ac tortor sc</a></li>
-                        <li><a href="#">Ornared id aliquet</a></li>
-                        <li><a href="#">Urna ac tortor sc</a></li>
-                        <li ><a href="#">Eget nisi laoreet</a></li>
-                        <li ><a href="#">Faciisis ornare</a></li>
+                       @foreach($brand as $value)
+                        <li><a href="#">{{ $value->brandname }}</a></li>
+                       @endforeach 
                     </ul>
                 </div>
                 <div class="footer-bottom-cate cate-bottom">

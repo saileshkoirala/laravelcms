@@ -21,6 +21,7 @@
                     <li><a href="{{ url('/viewcategories')}}"><i></i>viewCategories</a></li>
                     <li><a href="{{ url('/addcategories') }}"><i></i>Add Categories</a></li>
                     <li><a href="{{ url('/subcategories') }}"><i></i>Add Sub Categories</a></li>
+                    <li><a href="{{ url('/brand') }}"><i></i>Add brand</a></li>
                     
                 </ul>
 
@@ -73,9 +74,9 @@
                                     <tr >
                                         <td>
                                         <select type="text" class="col-md-10 form-control input-sm" name="subcat" required data-validation-required-message>
-                                         <option>Select Sub-Categories</option>
-                                          @foreach($scat as $value)
-                                            <option>{{ $value->subcatname }}</option>
+                                         <option>Select brand</option>
+                                          @foreach($brand as $value)
+                                            <option>{{ $value->brandname }}</option>
                                           @endforeach  
                                         </select>
                                         </td>
@@ -93,8 +94,12 @@
                                         <td>Image<input type="file" name="proimage" class="col-md-10 form-control input-sm" required></td>
                                     </tr>
                                     <tr>
+                                        <td>Quantity<input type="number" name="proqty" class="col-md-10 form-control input-sm" required></td>
+                                    </tr>
+                                    <tr>
                                         <td><input type="submit" name="submit" value="Add"  class="btn btn-primary col-md-10 form-control input-sm"></td>
                                     </tr>
+
                                 
                                 
                             </table>

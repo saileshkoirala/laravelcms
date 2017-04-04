@@ -33,6 +33,10 @@ Route::get('/subcategories','Catcontroller@addsubcategories');
 
 Route::post('/insertsub','Catcontroller@insertsub');
 
+Route::get('/brand','Catcontroller@addbrand');
+
+Route::post('/insertbrand','Catcontroller@insertbrand');
+
 Route::get('deletecat/{id}','Catcontroller@deletecat');
 
 Route::get('deletescat/{sid}','Catcontroller@deletescat');
@@ -62,6 +66,8 @@ Route::get('/','Frontcontroller@front');
 Route::get('/product/{id}','Frontcontroller@product');
 
 Route::get('/single/{id}','Frontcontroller@single');
+
+Route::get('/subcat1/{id}','Frontcontroller@subcat');
 
 /******************************************************/
 
