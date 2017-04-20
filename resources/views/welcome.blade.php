@@ -1,9 +1,9 @@
 @extends('layouts.front')
-
  @section('front_content')
 
 
                 <!--initiate accordion-->
+
         <script type="text/javascript">
             $(function() {
                 var menu_ul = $('.menu > li > ul'),

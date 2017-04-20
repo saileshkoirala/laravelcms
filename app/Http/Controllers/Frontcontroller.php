@@ -81,6 +81,20 @@ class Frontcontroller extends Controller
  		
  	}
 
+ 	public function cregister()
+ 	{
+
+ 		$pro = categories::groupBy('catname')->get();
+ 		$sub = subcategories::all();
+ 		$brand = brands::all();
+ 		$prod = products::all();
+ 		$lastlogo = logoimages::orderBy('created_at', 'desc')->first()->id;
+ 		$img = logoimages::where('id',$lastlogo)->get();
+ 		$lastrec = Colors::orderBy('created_at', 'desc')->first()->colname;
+		$col = Colors::where('colname',$lastrec)->get();
+ 		return view('customersignup.custregister',compact("img","pro","sub","col","prod","brand"));
+ 		
+ 	}
 
  	
 

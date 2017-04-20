@@ -23,6 +23,8 @@ Route::get('/home', 'HomeController@index');
 
 
 
+
+
 Route::get('/addcategories','Catcontroller@addcategories');
 
 Route::get('/viewcategories','Catcontroller@viewcategories');
@@ -72,6 +74,10 @@ Route::get('/subcat1/{id}','Frontcontroller@subcat');
 /******************************************************/
 
 Route::resource('/cart','CartController');
+
+
+/******** customer registration ***************/
+
 
 
 

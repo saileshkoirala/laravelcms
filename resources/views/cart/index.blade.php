@@ -39,7 +39,7 @@
 
     <div class="container">
         <h3>Cart Items</h3>
-
+        
 
         <table class="table-striped table-hover table-bordered" width="100%">
             <thead>

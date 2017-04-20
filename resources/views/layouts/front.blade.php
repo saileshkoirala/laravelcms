@@ -86,7 +86,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="account"><a href="login.html"><span> </span>YOUR ACCOUNT</a></div>
 							<ul class="login">
 								<li><a href="login.html"><span> </span>LOGIN</a></li> |
-								<li ><a href="register.html">SIGNUP</a></li>
+								<li ><a href="register">SIGNUP</a></li>
 							</ul>
 						<div class="cart"><a href="{{ route('cart.index') }}"><span></span>CART</a> <span style="background-color:blue;" class="badge badge-pill badge-success">{{ Cart::count() }}</span></div>
 					<div class="clearfix"> </div>

@@ -74,6 +74,7 @@
             </div>
         </div>
     </nav>
+    
 
     @yield('content')
 
@@ -85,5 +86,6 @@
     <script>//hides the alert box 
         $('div.alert').delay(4000).slideUp();
     </script>
+    
 </body>
 </html>
