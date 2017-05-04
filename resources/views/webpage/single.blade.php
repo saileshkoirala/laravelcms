@@ -105,7 +105,7 @@
     <div class="footer">
         <div class="footer-top">
             <div class="container">
-                <div class="latter">
+                <!--<div class="latter">
                     <h6>NEWS-LETTER</h6>
                     <div class="sub-left-right">
                       
@@ -156,7 +156,7 @@
                 </div>
                 <div class="footer-bottom-cate cate-bottom">
                     <h6>OUR ADDERSS</h6>
-                    <ul>
+                   
                         <li>Aliquam metus  dui. </li>
                         <li>orci, ornareidquet</li>
                         <li> ut,DUI.</li>
@@ -164,7 +164,7 @@
                         <li >gravida at.</li>
                         <li class="phone">PH : 6985792466</li>
                         <li class="temp"> <p class="footer-class">Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p></li>
-                    </ul>
+                    </ul>-->
                 </div>
                 <div class="clearfix"> </div>
             </div>

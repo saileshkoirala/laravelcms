@@ -77,23 +77,14 @@
                 <div class="clearfix"> </div>
             </div>
         </div>
-        <div class="footer-bottom">
+     <!--   <div class="footer-bottom">
             <div class="container">
                 <div class="footer-bottom-cate">
                     <h6>CATEGORIES</h6>
                     <ul>
-                        <li><a href="#">Curabitur sapien</a></li>
-                        <li><a href="#">Dignissim purus</a></li>
-                        <li><a href="#">Tempus pretium</a></li>
-                        <li ><a href="#">Dignissim neque</a></li>
-                        <li ><a href="#">Ornared id aliquet</a></li>
-                        <li><a href="#">Ultrices id du</a></li>
-                        <li><a href="#">Commodo sit</a></li>
-                        <li ><a href="#">Urna ac tortor sc</a></li>
-                        <li><a href="#">Ornared id aliquet</a></li>
-                        <li><a href="#">Urna ac tortor sc</a></li>
-                        <li ><a href="#">Eget nisi laoreet</a></li>
-                        <li ><a href="#">Faciisis ornare</a></li>
+                        @foreach($pro as $value)
+                            <li><a href="#">Curabitur sapien</a></li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="footer-bottom-cate bottom-grid-cat">
@@ -136,7 +127,7 @@
                         <li class="phone">PH : 6985792466</li>
                         <li class="temp"> <p class="footer-class">Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p></li>
                     </ul>
-                </div>
+                </div>-->
                 <div class="clearfix"> </div>
             </div>
         </div>

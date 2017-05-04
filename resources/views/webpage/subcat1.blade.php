@@ -59,7 +59,7 @@
 @section('front_content')
 
 <!---->
-    <div class="footer">
+   <!-- <div class="footer">
         <div class="footer-top">
             <div class="container">
                 <div class="latter">
@@ -143,7 +143,7 @@
                         <li class="phone">PH : 6985792466</li>
                         <li class="temp"> <p class="footer-class">Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p></li>
                     </ul>
-                </div>
+                </div>-->
                 <div class="clearfix"> </div>
             </div>
         </div>

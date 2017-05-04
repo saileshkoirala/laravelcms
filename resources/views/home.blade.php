@@ -52,6 +52,14 @@
                     <li><a href="{{ url('/logo') }}"><i></i>Change Logo</a></li> 
                     <li><a href="{{ url('/color') }}"><i></i>Change color</a></li>                    
                 </ul>
+                
+                <li data-toggle="collapse" data-target="#link" class="collapsed">
+                  <a href="#"><i class="fa fa-external-link"></i> Links <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="link">
+                    <li><a href="{{ url('/link') }}"><i></i>Add Social Links</a></li> 
+                                    
+                </ul>
 
 
             </ul>

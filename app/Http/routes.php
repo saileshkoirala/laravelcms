@@ -61,6 +61,14 @@ Route::get('/color','Colorcontroller@changeColor');
 
 Route::post('/updatecolor','Colorcontroller@updateColor');
 
+Route::get('/link','linkController@viewlink');
+
+Route::post('/insertflink','linkController@insertflink');
+Route::post('/inserttlink','linkController@inserttlink');
+Route::get('deleteface/{id}','linkController@deleteface');
+Route::get('deletetwit/{id}','linkController@deletetwit');
+
+
 /* ********** Front end (ecommerce site)************* */
 
 Route::get('/','Frontcontroller@front');
@@ -74,6 +82,8 @@ Route::get('/subcat1/{id}','Frontcontroller@subcat');
 /******************************************************/
 
 Route::resource('/cart','CartController');
+
+
 
 
 /******** customer registration ***************/

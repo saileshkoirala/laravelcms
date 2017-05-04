@@ -9,6 +9,8 @@ use App\home;
 use App\brands;
 use App\logoimages;
 use App\Colors;
+use App\facebook;
+use App\twitter;
 use Illuminate\Support\Facades\Input;
 
 
@@ -26,11 +28,13 @@ class Frontcontroller extends Controller
  		$sub = subcategories::all();
  		$brand = brands::all();
  		$prod = products::all();
+ 		$face = facebook::all();
+ 		$twit = twitter::all();
  		$lastlogo = logoimages::orderBy('created_at', 'desc')->first()->id;
  		$img = logoimages::where('id',$lastlogo)->get();
  		$lastrec = Colors::orderBy('created_at', 'desc')->first()->colname;
 		$col = Colors::where('colname',$lastrec)->get();
- 		return view('welcome',compact("img","pro","sub","col","prod","brand"));
+ 		return view('welcome',compact("img","pro","sub","col","prod","brand","face","twit"));
 
  		
     }

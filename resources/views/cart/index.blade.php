@@ -52,9 +52,10 @@
             </thead>
             <tbody>
             @foreach($cartItems as $cartItem)
+               
                 <tr >
-                    <td>{{ $cartItem->prodname }}</td>
-                    <td>{{ $cartItem->price }}</td>
+                    <td name="pname">{{ $cartItem->prodname }}</td>
+                    <td name="price">{{ $cartItem->price }}</td>
 
                     <td>
                         {!! Form::open(['route' => ['cart.update',$cartItem->rowId], 'method' => 'PUT']) !!}
@@ -75,6 +76,7 @@
                          </form>
                     </td>
                 </tr>
+
             @endforeach
 
             <tr>
@@ -92,7 +94,7 @@
                 <td class="btn btn-primary btn-sm "><a href="/" style="text-decoration:none; color:#ffffff;" >Continue Shopping</a></td>
                 <td class="pull-right btn btn-success btn-sm">Checkout</td>
 
-            </tr>
+            </tr> 
             </tbody>
         </table>
 

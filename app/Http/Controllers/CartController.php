@@ -48,12 +48,13 @@ class CartController extends Controller
     }
 
 
-   /* public function custorder(Request $request)
+    /*public function custorder(Request $request)
     {
-        $orderdetails = new reports;
-        $orderdetails-> = Input::get('catname');
-        $orderdetails-> = Input::get('catname');
-        $catname->save();
+        $orderdetails = new orders;
+        $orderdetails->name = Input::get('pname');
+        $orderdetails->price = Input::get('price');
+        $orderdetails->qty = Input::get('qty');
+        $orderdetails->save();
         return back()->with('flash_message','Categories added successfully');
 
     }*/
